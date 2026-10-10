@@ -31,28 +31,13 @@ struct MainTabView: View {
 
 // MARK: - Placeholder Views
 
-struct LoginView: View {
-    @EnvironmentObject var auth: AuthManager
-    var body: some View {
-        VStack(spacing: 20) {
-            Text("ChatAja")
-                .font(.largeTitle).bold()
-            Text("Masuk untuk lanjutkan")
-                .foregroundStyle(.secondary)
-            // TODO: Firebase Auth UI
-            Button("Masuk (TODO)") { }
-                .buttonStyle(.borderedProminent)
-        }
-    }
-}
-
 struct ContactsView: View {
     @State private var contacts: [Contact] = []
     var body: some View {
         NavigationStack {
             List(contacts) { c in
                 HStack {
-                    Text(c.partnerName.isEmpty ? String(c.userId.prefix(8)) : c.partnerName)
+                    Text(c.partnerName.isEmpty ? c.userId.prefix(8) : c.partnerName)
                     Spacer()
                     if c.unreadCount > 0 {
                         Text("\(c.unreadCount)")
