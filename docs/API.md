@@ -4,7 +4,7 @@ Base URL: `https://chat-anon-roan.vercel.app/api`
 
 ## Auth
 
-Semua endpoint butuh Firebase ID Token:
+Semua endpoint cuma butuh Firebase ID Token (Bearer). Tidak perlu attestation / App Check.
 ```
 Authorization: Bearer <firebase-id-token>
 ```
