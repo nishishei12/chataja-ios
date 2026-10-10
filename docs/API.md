@@ -116,6 +116,26 @@ Response: `{ "success": true, "data": { "profile": { "userId": "...", "displayNa
 ### GET /api/safety/blocks
 Response: `{ "success": true, "data": { "blocks": [...] } }`
 
+### POST /api/safety/block
+Blokir user (juga end room kalau ada).
+```json
+{ "userId": "<uid sendiri>", "targetId": "<uid target>", "roomId": "optional" }
+```
+Response: `{ "success": true, "message": "User blocked successfully" }`
+
+### POST /api/safety/report
+Lapor user.
+```json
+{ "reporterId": "<uid sendiri>", "reportedId": "<uid target>", "reason": "spam", "details": "optional", "roomId": "optional" }
+```
+Response: `{ "success": true, "message": "Report submitted successfully" }`
+
+## Account (lanjutan)
+
+### POST /api/account/delete
+Hapus akun permanen. Body kosong.
+Response: `{ "success": true }`
+
 ## Catatan
 
 - Chat realtime (room, pesan, typing) tetap via **Firestore langsung**, bukan API.
