@@ -58,6 +58,14 @@ final class R2UploadService {
                                 contentType: "audio/mp4", userId: userId)
     }
 
+    /// Upload video (mp4, sudah dikompres di sisi klien) ke R2.
+    /// Ditambah untuk PRD parity Android → iOS (chat video).
+    func uploadVideo(_ data: Data, userId: String) async throws -> String {
+        let fileName = "video_\(Int(Date().timeIntervalSince1970 * 1000)).mp4"
+        return try await upload(data: data, fileName: fileName,
+                                contentType: "video/mp4", userId: userId)
+    }
+
     // MARK: - Private
 
     private func upload(data: Data, fileName: String, contentType: String, userId: String) async throws -> String {

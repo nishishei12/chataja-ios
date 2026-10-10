@@ -13,6 +13,11 @@ import Combine
 
 #if canImport(FirebaseAuth)
 import FirebaseAuth
+import AuthenticationServices
+import CryptoKit
+#if canImport(GoogleSignIn)
+import GoogleSignIn
+#endif
 
 final class AuthManager: ObservableObject {
     static let shared = AuthManager()
@@ -52,11 +57,12 @@ final class AuthManager: ObservableObject {
         }
     }
 
-    /// Login email + password.
-    func signIn(email: String, password: String) async {
+    /// Login dengan Apple via Firebase OAuth
+    func signInWithApple(idToken: String, rawNonce: String, fullName: PersonNameComponents?) async {
         await MainActor.run { self.authError = nil }
+        let credential = OAuthProvider.appleCredential(withIDToken: idToken, rawNonce: rawNonce, fullName: fullName)
         do {
-            let result = try await Auth.auth().signIn(withEmail: email, password: password)
+            let result = try await Auth.auth().signIn(with: credential)
             await MainActor.run {
                 self.uid = result.user.uid
                 self.isLoggedIn = true
@@ -67,14 +73,13 @@ final class AuthManager: ObservableObject {
         }
     }
 
-    /// Daftar akun baru.
-    func signUp(email: String, password: String, displayName: String) async {
+    /// Login dengan Google via Firebase OAuth Provider
+    func signInWithGoogleOAuth() async {
         await MainActor.run { self.authError = nil }
+        let provider = OAuthProvider(providerID: "google.com")
         do {
-            let result = try await Auth.auth().createUser(withEmail: email, password: password)
-            let changeReq = result.user.createProfileChangeRequest()
-            changeReq.displayName = displayName
-            try await changeReq.commitChanges()
+            let credential = try await provider.credential(with: nil)
+            let result = try await Auth.auth().signIn(with: credential)
             await MainActor.run {
                 self.uid = result.user.uid
                 self.isLoggedIn = true
@@ -85,7 +90,6 @@ final class AuthManager: ObservableObject {
         }
     }
 
-    /// Login dengan Google (butuh GoogleSignIn SDK + ClientID dari plist).
     #if canImport(GoogleSignIn)
     func signInWithGoogle(presenting: UIViewController) async {
         await MainActor.run { self.authError = nil }
@@ -112,13 +116,21 @@ final class AuthManager: ObservableObject {
 
     func signOut() {
         try? Auth.auth().signOut()
-        // Listener akan update isLoggedIn otomatis
+        self.idToken = nil
+        self.uid = nil
+        self.isLoggedIn = false
+    }
+
+    /// Mode dev: tempel Firebase ID token manual.
+    func signInDev(token: String, uid: String) {
+        self.idToken = token
+        self.uid = uid
+        self.isLoggedIn = true
     }
 
     // MARK: - Private
 
     #if canImport(GoogleSignIn)
-    import GoogleSignIn
     private func googleSignIn(presenting: UIViewController) async throws -> GIDSignInResult {
         try await withCheckedThrowingContinuation { cont in
             GIDSignIn.sharedInstance.signIn(withPresenting: presenting) { result, error in

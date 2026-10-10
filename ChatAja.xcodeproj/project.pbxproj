@@ -8,64 +8,103 @@
 
 /* Begin PBXBuildFile section */
 		115D05496FFE64E116376B26 /* ChatAjaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D10DF21D0CCC1B70E10E4C /* ChatAjaApp.swift */; };
-		FD8227630524D5DB253B3634 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3B6D6C64976FD0C9DF2DF6 /* APIClient.swift */; };
+		2DB27468495199BC17A822DA /* R2UploadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F64A211F17778B11F78357 /* R2UploadService.swift */; };
+		3A6269AD14AFA34C14A3712C /* FirestoreChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BF827CE1F14C2940B8D800 /* FirestoreChatService.swift */; };
+		529330A1FD9A7ACDACB3E645 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC932B5D644946CE3778E9FE /* FeedView.swift */; };
+		688302E0A7B080CB5ECCE63C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587FCBB1D95EE9A20F7AD70B /* LoginView.swift */; };
 		6C52039BDA4AC35340F29141 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A18E0A089B462A4033D2A5 /* AuthManager.swift */; };
+		A6070B9CF28E71610AA267AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4520D96AC0EDB42E750BB2B /* Assets.xcassets */; };
+		A71020011234567890ABCDEF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A71020001234567890ABCDEF /* GoogleService-Info.plist */; };
+		A71020021234567890ABCDEF /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = A71020041234567890ABCDEF /* FirebaseAuth */; };
+		A71020031234567890ABCDEF /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = A71020051234567890ABCDEF /* FirebaseFirestore */; };
 		AA6CDAF6F19ABFC3DA581349 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DD13364136B302B02BABB6 /* Models.swift */; };
 		C91768670DB21A87E1D7C2D9 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F834F26FED7D5A4B7F7F7F /* MainTabView.swift */; };
-		529330A1FD9A7ACDACB3E645 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC932B5D644946CE3778E9FE /* FeedView.swift */; };
-		DEFC95FDD68A67C3BF106D58 /* ThreadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3976FFEE1714A26C1532AE71 /* ThreadView.swift */; };
-		A6070B9CF28E71610AA267AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4520D96AC0EDB42E750BB2B /* Assets.xcassets */; };
-		3A6269AD14AFA34C14A3712C /* FirestoreChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BF827CE1F14C2940B8D800 /* FirestoreChatService.swift */; };
-		2DB27468495199BC17A822DA /* R2UploadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F64A211F17778B11F78357 /* R2UploadService.swift */; };
 		D12F4694254032256A302030 /* ChatRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D255CFC4C7CDDEBB2C04AC57 /* ChatRoomView.swift */; };
-		688302E0A7B080CB5ECCE63C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587FCBB1D95EE9A20F7AD70B /* LoginView.swift */; };
+		DEFC95FDD68A67C3BF106D58 /* ThreadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3976FFEE1714A26C1532AE71 /* ThreadView.swift */; };
+		E6F97D66307A0F6F008997BC /* SharedUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F97D65307A0F6F008997BC /* SharedUI.swift */; };
+		E6F97D68307A1266008997BC /* ChatMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F97D67307A1266008997BC /* ChatMedia.swift */; };
+		E6F97D6B307A12CC008997BC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F97D6A307A12CC008997BC /* SettingsView.swift */; };
+		FD8227630524D5DB253B3634 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3B6D6C64976FD0C9DF2DF6 /* APIClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		57D10DF21D0CCC1B70E10E4C /* ChatAjaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatAjaApp.swift"; sourceTree = "<group>"; };
-		5F3B6D6C64976FD0C9DF2DF6 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIClient.swift"; sourceTree = "<group>"; };
-		68A18E0A089B462A4033D2A5 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthManager.swift"; sourceTree = "<group>"; };
-		03DD13364136B302B02BABB6 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Models.swift"; sourceTree = "<group>"; };
-		65F834F26FED7D5A4B7F7F7F /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainTabView.swift"; sourceTree = "<group>"; };
-		FC932B5D644946CE3778E9FE /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedView.swift"; sourceTree = "<group>"; };
-		3976FFEE1714A26C1532AE71 /* ThreadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ThreadView.swift"; sourceTree = "<group>"; };
+		03DD13364136B302B02BABB6 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		14BF827CE1F14C2940B8D800 /* FirestoreChatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreChatService.swift; sourceTree = "<group>"; };
+		3976FFEE1714A26C1532AE71 /* ThreadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadView.swift; sourceTree = "<group>"; };
+		57D10DF21D0CCC1B70E10E4C /* ChatAjaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatAjaApp.swift; sourceTree = "<group>"; };
+		587FCBB1D95EE9A20F7AD70B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		5F3B6D6C64976FD0C9DF2DF6 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		65F834F26FED7D5A4B7F7F7F /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		68A18E0A089B462A4033D2A5 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		A71020001234567890ABCDEF /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A9F64A211F17778B11F78357 /* R2UploadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R2UploadService.swift; sourceTree = "<group>"; };
+		D255CFC4C7CDDEBB2C04AC57 /* ChatRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomView.swift; sourceTree = "<group>"; };
+		E6F97D65307A0F6F008997BC /* SharedUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedUI.swift; sourceTree = "<group>"; };
+		E6F97D67307A1266008997BC /* ChatMedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMedia.swift; sourceTree = "<group>"; };
+		E6F97D6A307A12CC008997BC /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		F4520D96AC0EDB42E750BB2B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		14BF827CE1F14C2940B8D800 /* FirestoreChatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirestoreChatService.swift"; sourceTree = "<group>"; };
-		A9F64A211F17778B11F78357 /* R2UploadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "R2UploadService.swift"; sourceTree = "<group>"; };
-		D255CFC4C7CDDEBB2C04AC57 /* ChatRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatRoomView.swift"; sourceTree = "<group>"; };
-		587FCBB1D95EE9A20F7AD70B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginView.swift"; sourceTree = "<group>"; };
+		F5BF48AA40CAD7891EB709FC /* ChatAja.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = ChatAja.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC932B5D644946CE3778E9FE /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
-/* Begin PBXGroup section */
+/* Begin PBXFrameworksBuildPhase section */
+		55B558C8EF820E6E00E5993C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A71020021234567890ABCDEF /* FirebaseAuth in Frameworks */,
+				A71020031234567890ABCDEF /* FirebaseFirestore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
 
+/* Begin PBXGroup section */
+		35D315DEBBF45F223B169A61 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				958E3F2125290F2CAA86383A /* API */,
+				A1C86A29E589D48EC70B6A32 /* Models */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		3DF75527B6E09CE352A65AA9 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				FC932B5D644946CE3778E9FE /* FeedView.swift */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		4F3FABD2EDC4211FC026BCC7 /* Thread */ = {
+			isa = PBXGroup;
+			children = (
+				D255CFC4C7CDDEBB2C04AC57 /* ChatRoomView.swift */,
+				3976FFEE1714A26C1532AE71 /* ThreadView.swift */,
+				E6F97D67307A1266008997BC /* ChatMedia.swift */,
+			);
+			path = Thread;
+			sourceTree = "<group>";
+		};
 		518DA81DB9B99529C0C0AEBE = {
 			isa = PBXGroup;
 			children = (
-				86AE3EEF056806793524DA89,
+				86AE3EEF056806793524DA89 /* ChatAja */,
+				F5BF48AA40CAD7891EB709FC /* ChatAja.app */,
 			);
 			sourceTree = "<group>";
 		};
 		86AE3EEF056806793524DA89 /* ChatAja */ = {
 			isa = PBXGroup;
 			children = (
+				A71020001234567890ABCDEF /* GoogleService-Info.plist */,
 				F4520D96AC0EDB42E750BB2B /* Assets.xcassets */,
-				D1D0524B025E57AFFF263442,
-				35D315DEBBF45F223B169A61,
-				984D844B917CCD4C29DE2A97,
+				D1D0524B025E57AFFF263442 /* App */,
+				35D315DEBBF45F223B169A61 /* Core */,
+				984D844B917CCD4C29DE2A97 /* Features */,
 			);
 			path = ChatAja;
-			sourceTree = "<group>";
-		};
-		D1D0524B025E57AFFF263442 /* App */ = {
-			isa = PBXGroup;
-			children = ( 57D10DF21D0CCC1B70E10E4C /* ChatAjaApp.swift */, );
-			path = App;
-			sourceTree = "<group>";
-		};
-		35D315DEBBF45F223B169A61 /* Core */ = {
-			isa = PBXGroup;
-			children = ( 958E3F2125290F2CAA86383A, A1C86A29E589D48EC70B6A32, );
-			path = Core;
 			sourceTree = "<group>";
 		};
 		958E3F2125290F2CAA86383A /* API */ = {
@@ -79,37 +118,51 @@
 			path = API;
 			sourceTree = "<group>";
 		};
-		A1C86A29E589D48EC70B6A32 /* Models */ = {
-			isa = PBXGroup;
-			children = ( 03DD13364136B302B02BABB6 /* Models.swift */, );
-			path = Models;
-			sourceTree = "<group>";
-		};
 		984D844B917CCD4C29DE2A97 /* Features */ = {
 			isa = PBXGroup;
 			children = (
 				587FCBB1D95EE9A20F7AD70B /* LoginView.swift */,
-				3DF75527B6E09CE352A65AA9,
-				4F3FABD2EDC4211FC026BCC7,
+				3DF75527B6E09CE352A65AA9 /* Feed */,
+				4F3FABD2EDC4211FC026BCC7 /* Thread */,
 				65F834F26FED7D5A4B7F7F7F /* MainTabView.swift */,
+				E6F97D64307A0F4C008997BC /* Components */,
+				E6F97D69307A12C6008997BC /* Settings */,
 			);
 			path = Features;
 			sourceTree = "<group>";
 		};
-		3DF75527B6E09CE352A65AA9 /* Feed */ = {
-			isa = PBXGroup;
-			children = ( FC932B5D644946CE3778E9FE /* FeedView.swift */, );
-			path = Feed;
-			sourceTree = "<group>";
-		};
-		4F3FABD2EDC4211FC026BCC7 /* Thread */ = {
+		A1C86A29E589D48EC70B6A32 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D255CFC4C7CDDEBB2C04AC57 /* ChatRoomView.swift */, 3976FFEE1714A26C1532AE71 /* ThreadView.swift */, );
-			path = Thread;
+				03DD13364136B302B02BABB6 /* Models.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
-
+		D1D0524B025E57AFFF263442 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				57D10DF21D0CCC1B70E10E4C /* ChatAjaApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		E6F97D64307A0F4C008997BC /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E6F97D65307A0F6F008997BC /* SharedUI.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		E6F97D69307A12C6008997BC /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				E6F97D6A307A12CC008997BC /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -118,7 +171,7 @@
 			buildConfigurationList = 84BD75DECF42B745CB4F39AA /* Build configuration list for PBXNativeTarget "ChatAja" */;
 			buildPhases = (
 				F2AB5FB218DA8B84623F4557 /* Sources */,
-				4F6F5CC3FCCF73F75AE9CCF4 /* Frameworks */,
+				55B558C8EF820E6E00E5993C /* Frameworks */,
 				55B558C7EF820E6E00E5993B /* Resources */,
 			);
 			buildRules = (
@@ -126,11 +179,14 @@
 			dependencies = (
 			);
 			name = ChatAja;
+			packageProductDependencies = (
+				A71020041234567890ABCDEF /* FirebaseAuth */,
+				A71020051234567890ABCDEF /* FirebaseFirestore */,
+			);
 			productName = ChatAja;
 			productReference = F5BF48AA40CAD7891EB709FC /* ChatAja.app */;
 			productType = "com.apple.product-type.application";
 		};
-		F5BF48AA40CAD7891EB709FC /* ChatAja.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = ChatAja.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -145,14 +201,33 @@
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
-			knownRegions = ( en, );
+			knownRegions = (
+				en,
+			);
 			mainGroup = 518DA81DB9B99529C0C0AEBE;
+			packageReferences = (
+				E6F97D63307A09FB008997BC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 518DA81DB9B99529C0C0AEBE;
 			projectDirPath = "";
 			projectRoot = "";
-			targets = ( 42AEFBAE01D2DFD981F7DA7D /* ChatAja */, );
+			targets = (
+				42AEFBAE01D2DFD981F7DA7D /* ChatAja */,
+			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		55B558C7EF820E6E00E5993B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A71020011234567890ABCDEF /* GoogleService-Info.plist in Resources */,
+				A6070B9CF28E71610AA267AE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F2AB5FB218DA8B84623F4557 /* Sources */ = {
@@ -166,77 +241,70 @@
 				C91768670DB21A87E1D7C2D9 /* MainTabView.swift in Sources */,
 				688302E0A7B080CB5ECCE63C /* LoginView.swift in Sources */,
 				529330A1FD9A7ACDACB3E645 /* FeedView.swift in Sources */,
+				E6F97D6B307A12CC008997BC /* SettingsView.swift in Sources */,
 				DEFC95FDD68A67C3BF106D58 /* ThreadView.swift in Sources */,
 				D12F4694254032256A302030 /* ChatRoomView.swift in Sources */,
+				E6F97D68307A1266008997BC /* ChatMedia.swift in Sources */,
 				2DB27468495199BC17A822DA /* R2UploadService.swift in Sources */,
+				E6F97D66307A0F6F008997BC /* SharedUI.swift in Sources */,
 				3A6269AD14AFA34C14A3712C /* FirestoreChatService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXResourcesBuildPhase section */
-		55B558C7EF820E6E00E5993B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A6070B9CF28E71610AA267AE /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
 /* Begin XCBuildConfiguration section */
-		CF6B519A44981854CFE35544 /* Debug */ = {
+		5D355270A25B2DBE6B934298 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Untuk merekam pesan suara di chat.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Untuk memilih foto profil dan mengirim foto atau video di chat.";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chataja.app;
+				PRODUCT_NAME = ChatAja;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SWIFT_VERSION = 5.9;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		6BECB725B07305DA998AB971 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				SWIFT_VERSION = 5.9;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				SWIFT_VERSION = 5.9;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
-		};
-		5D355270A25B2DBE6B934298 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				GENERATE_INFOPLIST_FILE = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.chataja.app;
-				PRODUCT_NAME = ChatAja;
-				SWIFT_VERSION = 5.9;
-			};
-			name = Debug;
 		};
 		70D410C402FA04D2D07C26A7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Untuk merekam pesan suara di chat.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Untuk memilih foto profil dan mengirim foto atau video di chat.";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.chataja.app;
 				PRODUCT_NAME = ChatAja;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SWIFT_VERSION = 5.9;
 			};
 			name = Release;
 		};
+		CF6B519A44981854CFE35544 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EEF0B44039EDB639024F3C9B /* Build configuration list for PBXProject "ChatAja" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CF6B519A44981854CFE35544 /* Debug */,
-				6BECB725B07305DA998AB971 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		84BD75DECF42B745CB4F39AA /* Build configuration list for PBXNativeTarget "ChatAja" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -246,8 +314,40 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		EEF0B44039EDB639024F3C9B /* Build configuration list for PBXProject "ChatAja" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF6B519A44981854CFE35544 /* Debug */,
+				6BECB725B07305DA998AB971 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		E6F97D63307A09FB008997BC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 13.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A71020041234567890ABCDEF /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E6F97D63307A09FB008997BC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		A71020051234567890ABCDEF /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E6F97D63307A09FB008997BC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4DC844ABCCFC0D132D087C1C /* Project object */;
 }
