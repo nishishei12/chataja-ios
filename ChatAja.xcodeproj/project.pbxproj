@@ -181,6 +181,7 @@
 		5D355270A25B2DBE6B934298 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GENERATE_INFOPLIST_FILE = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.chataja.app;
 				PRODUCT_NAME = ChatAja;
 				SWIFT_VERSION = 5.9;
@@ -190,6 +191,7 @@
 		70D410C402FA04D2D07C26A7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GENERATE_INFOPLIST_FILE = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.chataja.app;
 				PRODUCT_NAME = ChatAja;
 				SWIFT_VERSION = 5.9;
