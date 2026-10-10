@@ -113,6 +113,8 @@ final class FirestoreChatService: ObservableObject {
     @Published var typingUsers: [String] = []
     func listenMessages(roomId: String) {}
     func stopListening() {}
+    func sendMessage(roomId: String, senderId: String, text: String) async throws {}
+    func setTyping(roomId: String, userId: String, isTyping: Bool) async throws {}
 }
 struct ChatMessage: Identifiable {
     let id: String; let senderId: String; let text: String

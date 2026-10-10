@@ -52,7 +52,7 @@ struct ContactsView: View {
         NavigationStack {
             List(contacts) { c in
                 HStack {
-                    Text(c.partnerName.isEmpty ? c.userId.prefix(8) : c.partnerName)
+                    Text(c.partnerName.isEmpty ? String(c.userId.prefix(8)) : c.partnerName)
                     Spacer()
                     if c.unreadCount > 0 {
                         Text("\(c.unreadCount)")

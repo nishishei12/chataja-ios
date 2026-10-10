@@ -68,12 +68,18 @@ final class R2UploadService {
         if let token = AuthManager.shared.idToken {
             ticketReq.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         }
-        ticketReq.httpBody = try JSONEncoder().encode([
-            "userId": userId,
-            "fileName": fileName,
-            "contentType": contentType,
-            "contentLength": data.count,
-        ] as [String: Any])
+        struct TicketRequest: Encodable {
+            let userId: String
+            let fileName: String
+            let contentType: String
+            let contentLength: Int
+        }
+        ticketReq.httpBody = try JSONEncoder().encode(TicketRequest(
+            userId: userId,
+            fileName: fileName,
+            contentType: contentType,
+            contentLength: data.count
+        ))
 
         let (ticketData, ticketResp) = try await URLSession.shared.data(for: ticketReq)
         guard (ticketResp as? HTTPURLResponse)?.statusCode == 200 else {
