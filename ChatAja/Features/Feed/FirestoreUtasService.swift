@@ -15,6 +15,13 @@ enum FirestoreUtasError: Error {
 #if canImport(FirebaseFirestore)
 import FirebaseFirestore
 
+struct UtasUserProfile {
+    let uid: String
+    let displayName: String
+    let avatarUrl: String
+    let bio: String
+}
+
 final class FirestoreUtasService {
     static let shared = FirestoreUtasService()
     private init() {}
@@ -23,6 +30,15 @@ final class FirestoreUtasService {
     private let pageSize = 20
     private var lastDoc: DocumentSnapshot?
     private var exhausted = false
+
+    /// postId -> authorUid (authorRef). Model Post tidak membawa author id
+    /// (kontrak milik Niko, tak boleh diubah), jadi dipetakan di sini agar
+    /// tombol Ikuti dan profil penulis bisa bekerja untuk post dari Firestore.
+    private static var authorIds: [String: String] = [:]
+
+    static func authorUid(forPostId postId: String) -> String? {
+        authorIds[postId]
+    }
 
     func reset() {
         lastDoc = nil
@@ -67,6 +83,37 @@ final class FirestoreUtasService {
         return (like, fresh.get("likesCount") as? Int ?? post.stats.likes)
     }
 
+    // MARK: - Profil penulis (baca /users, diizinkan rules untuk user login)
+
+    /// Profil penulis lain. Rules: /users boleh dibaca user login.
+    func fetchUserProfile(uid: String) async throws -> UtasUserProfile {
+        let snap = try await db.collection("users").document(uid).getDocument()
+        let d = snap.data() ?? [:]
+        let name = d["display_name"] as? String
+        return UtasUserProfile(
+            uid: uid,
+            displayName: name?.isEmpty == false ? name! : "Pengguna",
+            avatarUrl: d["photo_url"] as? String ?? "",
+            bio: d["bio"] as? String ?? ""
+        )
+    }
+
+    /// Post milik penulis (untuk tab Post di profil). authorRef == ref user.
+    func fetchPostsByAuthor(uid: String, limit: Int = 20) async throws -> [Post] {
+        guard let myUid = AuthManager.shared.uid, !myUid.isEmpty else {
+            throw FirestoreUtasError.noAuth
+        }
+        let userRef = db.collection("users").document(uid)
+        // Tanpa orderBy server (hindari butuh composite index): urutkan lokal.
+        let snap = try await db.collection("utas")
+            .whereField("authorRef", isEqualTo: userRef)
+            .limit(to: limit)
+            .getDocuments()
+        return snap.documents
+            .compactMap { Self.post(from: $0, myUid: myUid) }
+            .sorted { $0.createdAt > $1.createdAt }
+    }
+
     // MARK: - Mapping (skema rules 2026-09-26)
 
     static func post(from doc: QueryDocumentSnapshot, myUid: String) -> Post? {
@@ -80,6 +127,9 @@ final class FirestoreUtasService {
         let myRefId = myUid
         let authorUid = (d["authorRef"] as? DocumentReference)?.documentID
         let likedBy = (d["likedBy"] as? [DocumentReference])?.map(\.documentID) ?? []
+        if let authorUid {
+            Self.authorIds[doc.documentID] = authorUid
+        }
 
         let author = Post.Author(
             mode: isAnon ? "anon" : "profile",
@@ -110,10 +160,24 @@ final class FirestoreUtasService {
 }
 #else
 // Fallback kalau Firebase belum dipasang — pemanggil fallback ke REST.
+struct UtasUserProfile {
+    let uid: String
+    let displayName: String
+    let avatarUrl: String
+    let bio: String
+}
+
 final class FirestoreUtasService {
     static let shared = FirestoreUtasService()
     func reset() {}
     var hasMore: Bool { true }
+    static func authorUid(forPostId postId: String) -> String? { nil }
+    func fetchUserProfile(uid: String) async throws -> UtasUserProfile {
+        throw FirestoreUtasError.unavailable
+    }
+    func fetchPostsByAuthor(uid: String, limit: Int = 20) async throws -> [Post] {
+        throw FirestoreUtasError.unavailable
+    }
     func fetchNext() async throws -> [Post] { throw FirestoreUtasError.unavailable }
     func setLike(post: Post, like: Bool) async throws -> (Bool, Int) {
         throw FirestoreUtasError.unavailable

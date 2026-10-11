@@ -1,0 +1,4 @@
+module grpcppWrapper {
+umbrella "/Users/shei/Library/Developer/Xcode/DerivedData/ChatAja-fedrmqkenxbpylhjjikyefkhfwua/SourcePackages/checkouts/grpc-binary/grpcpp-Wrapper/include"
+export *
+}

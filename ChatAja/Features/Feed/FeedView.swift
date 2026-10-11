@@ -24,6 +24,22 @@ struct FeedView: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 0) {
+                Button { showComposer = true } label: {
+                    HStack(spacing: 12) {
+                        Image(systemName: "person.circle.fill")
+                            .font(.system(size: 40))
+                            .foregroundStyle(.tertiary)
+                        Text("Apa yang baru?")
+                            .foregroundStyle(.secondary)
+                        Spacer()
+                    }
+                    .padding(.horizontal, 20)
+                    .padding(.vertical, 10)
+                }
+                .buttonStyle(.plain)
+                .accessibilityLabel("Tulis utas baru")
+                Divider()
+
                 Picker("", selection: $tab) {
                     ForEach(FeedTab.allCases, id: \.self) { t in
                         Text(t.title).tag(t)
@@ -74,14 +90,6 @@ struct FeedView: View {
             }
             .navigationTitle("Utas")
             .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .primaryAction) {
-                    Button { showComposer = true } label: {
-                        Image(systemName: "square.and.pencil")
-                    }
-                    .accessibilityLabel("Tulis utas baru")
-                }
-            }
             .sheet(isPresented: $showComposer) {
                 CreatePostView { Task { await refresh() } }
             }
@@ -215,6 +223,10 @@ struct PostCardView: View {
     @State private var chatRoomId: String?
     @State private var isOpeningChat = false
     @State private var actionError: String?
+    @State private var showProfile = false
+    @State private var following: Bool
+    @State private var isTogglingFollow = false
+    @State private var showShare = false
 
     init(post: Post, isInteractive: Bool = true, onDeleted: (() -> Void)? = nil,
          likeAction: ((Post, Bool) async throws -> (Bool, Int))? = nil) {
@@ -224,21 +236,76 @@ struct PostCardView: View {
         self.likeAction = likeAction
         _liked = State(initialValue: post.viewer.isLiked)
         _likeCount = State(initialValue: post.stats.likes)
+        let uid: String? = post.viewer.isMine
+            ? AuthManager.shared.uid
+            : FirestoreUtasService.authorUid(forPostId: post.id)
+        _following = State(initialValue: uid.map { FollowStore.isFollowing($0) } ?? false)
+    }
+
+    /// Uid penulis. Post model tak membawa author id, jadi khusus post dari
+    /// Firestore dibaca dari peta author di service; post REST tak dikenal.
+    var authorUid: String? {
+        if post.viewer.isMine { return AuthManager.shared.uid }
+        return FirestoreUtasService.authorUid(forPostId: post.id)
+    }
+
+    /// Aksi sosial (ikuti/kunjungi profil) hanya untuk post non-anonim yang
+    /// penulisnya dikenal dan bukan milik sendiri. Anonim: nonaktif total
+    /// agar identitas penulis tidak bocor.
+    var canSocial: Bool {
+        post.author.mode != "anon" && authorUid != nil && !post.viewer.isMine
     }
 
     var body: some View {
         HStack(alignment: .top, spacing: 12) {
-            AvatarView(post: post)
+            ZStack(alignment: .bottomTrailing) {
+                Button {
+                    if canSocial { showProfile = true }
+                } label: {
+                    AvatarView(post: post)
+                }
+                .buttonStyle(.plain)
+                .disabled(!canSocial)
+                .accessibilityLabel(canSocial ? "Lihat profil \(post.author.displayTitle)" : "Avatar")
+                .accessibilityIdentifier("uit-avatar") // hook UI test
+
+                if canSocial {
+                    Button { Task { await toggleFollow() } } label: {
+                        Image(systemName: following ? "minus" : "plus")
+                            .font(.system(size: 11, weight: .bold))
+                            .foregroundStyle(.primary)
+                            .frame(width: 20, height: 20)
+                            .background(Color(uiColor: .systemBackground))
+                            .clipShape(Circle())
+                            .overlay(Circle().stroke(Color(uiColor: .separator), lineWidth: 1))
+                            .shadow(radius: 1)
+                    }
+                    .buttonStyle(.plain)
+                    .offset(x: 5, y: 5)
+                    .disabled(isTogglingFollow)
+                    .accessibilityLabel(following ? "Berhenti mengikuti" : "Ikuti")
+                    .accessibilityIdentifier("uit-followbadge") // hook UI test
+                }
+            }
 
             VStack(alignment: .leading, spacing: 6) {
                 HStack {
-                    Text(post.author.displayTitle)
-                        .font(.subheadline).bold()
-                        .lineLimit(1)
-                    if post.author.isVerified == true {
-                        Image(systemName: "checkmark.seal.fill")
-                            .foregroundStyle(Brand.indigo).font(.caption)
+                    Button {
+                        if canSocial { showProfile = true }
+                    } label: {
+                        HStack(spacing: 4) {
+                            Text(post.author.displayTitle)
+                                .font(.subheadline).bold()
+                                .lineLimit(1)
+                            if post.author.isVerified == true {
+                                Image(systemName: "checkmark.seal.fill")
+                                    .foregroundStyle(Brand.indigo).font(.caption)
+                            }
+                        }
                     }
+                    .buttonStyle(.plain)
+                    .disabled(!canSocial)
+                    .accessibilityIdentifier("uit-username") // hook UI test
                     Spacer()
                     Text(waktuRelatif(post.createdAt))
                         .font(.caption).foregroundStyle(.secondary)
@@ -257,10 +324,17 @@ struct PostCardView: View {
                     } label: {
                         Label("\(post.stats.replies)", systemImage: "bubble.right")
                     }
+                    .accessibilityIdentifier("uit-comment") // hook UI test
                     Button { Task { await toggleLike() } } label: {
                         Label("\(likeCount)", systemImage: liked ? "heart.fill" : "heart")
                             .foregroundStyle(liked ? .red : .secondary)
                     }
+                    .accessibilityIdentifier("uit-like") // hook UI test
+                    Button { showShare = true } label: {
+                        Image(systemName: "paperplane")
+                    }
+                    .accessibilityLabel("Bagikan")
+                    .accessibilityIdentifier("uit-share") // hook UI test
                     Spacer()
                     Menu {
                         if post.viewer.isMine {
@@ -290,12 +364,31 @@ struct PostCardView: View {
         }
         .padding(.horizontal, 20)
         .padding(.vertical, 12)
+        .accessibilityIdentifier("uit-card") // hook UI test
         .contentShape(Rectangle())
         .onTapGesture {
             if isInteractive { showThread = true }
         }
+        .contextMenu {
+            if canSocial {
+                Button(following ? "Berhenti mengikuti" : "Ikuti") {
+                    Task { await toggleFollow() }
+                }
+                Button("Kunjungi profil") { showProfile = true }
+            }
+        }
         .navigationDestination(isPresented: $showThread) {
             ThreadView(postId: post.id)
+        }
+        .sheet(isPresented: $showProfile) {
+            if let uid = authorUid {
+                NavigationStack {
+                    AuthorProfileSheet(authorUid: uid, fallbackName: post.author.displayTitle)
+                }
+            }
+        }
+        .sheet(isPresented: $showShare) {
+            ShareSheet(items: [post.text])
         }
         .sheet(isPresented: $showChat) {
             if let roomId = chatRoomId {
@@ -372,6 +465,32 @@ struct PostCardView: View {
         }
     }
 
+    /// Ikuti/berhenti mengikuti penulis via POST /utas/follow (API.md).
+    /// Status di-cache lokal agar badge langsung konsisten.
+    func toggleFollow() async {
+        guard let uid = authorUid, !isTogglingFollow else { return }
+        isTogglingFollow = true
+        defer { isTogglingFollow = false }
+        let next = !following
+        do {
+            struct Body: Encodable { let targetUserId: String; let follow: Bool }
+            struct D: Decodable { let following: Bool? }
+            let res: APIResponse<D> = try await APIClient.shared.post(
+                "/utas/follow", body: Body(targetUserId: uid, follow: next)
+            )
+            if let apiErr = res.error, res.success == false {
+                actionError = apiErr
+                return
+            }
+            let ok = res.data?.following ?? next
+            following = ok
+            FollowStore.setFollowing(uid, ok)
+            actionError = nil
+        } catch {
+            actionError = "Gagal mengikuti. Coba lagi."
+        }
+    }
+
     func deletePost() async {
         do {
             struct Body: Encodable { let postId: String }
@@ -414,6 +533,240 @@ struct PostCardView: View {
             struct Body: Encodable { let utasId: String }
             struct D: Decodable { let roomId: String }
             let res: APIResponse<D> = try await APIClient.shared.post("/chat/from-utas", body: Body(utasId: post.id))
+            if let apiErr = res.error, res.success == false {
+                actionError = apiErr
+                return
+            }
+            if let roomId = res.data?.roomId {
+                chatRoomId = roomId
+                showChat = true
+            }
+        } catch {
+            actionError = "Gagal membuka chat. Coba lagi."
+        }
+    }
+}
+
+// MARK: - Follow (cache lokal status ikuti per penulis)
+
+enum FollowStore {
+    private static let key = "utas-following-uids"
+
+    static func isFollowing(_ uid: String) -> Bool {
+        UserDefaults.standard.stringArray(forKey: key)?.contains(uid) ?? false
+    }
+
+    static func setFollowing(_ uid: String, _ value: Bool) {
+        var set = Set(UserDefaults.standard.stringArray(forKey: key) ?? [])
+        if value { set.insert(uid) } else { set.remove(uid) }
+        UserDefaults.standard.set(Array(set), forKey: key)
+    }
+}
+
+// MARK: - Bagikan (share sheet sistem)
+
+struct ShareSheet: UIViewControllerRepresentable {
+    let items: [Any]
+
+    func makeUIViewController(context: Context) -> UIActivityViewController {
+        UIActivityViewController(activityItems: items, applicationActivities: nil)
+    }
+
+    func updateUIViewController(_ controller: UIActivityViewController, context: Context) {}
+}
+
+// MARK: - Profil penulis (ala Threads: header + tombol + post)
+
+struct AuthorProfileSheet: View {
+    let authorUid: String
+    let fallbackName: String
+    @Environment(\.dismiss) private var dismiss
+    @State private var profile: UtasUserProfile?
+    @State private var posts: [Post] = []
+    @State private var isLoading = true
+    @State private var errorMessage: String?
+    @State private var following: Bool
+    @State private var isTogglingFollow = false
+    @State private var chatRoomId: String?
+    @State private var showChat = false
+    @State private var isOpeningChat = false
+    @State private var actionError: String?
+
+    init(authorUid: String, fallbackName: String) {
+        self.authorUid = authorUid
+        self.fallbackName = fallbackName
+        _following = State(initialValue: FollowStore.isFollowing(authorUid))
+    }
+
+    var body: some View {
+        Group {
+            if isLoading {
+                VStack(spacing: 12) {
+                    Circle().fill(.quaternary).frame(width: 72, height: 72)
+                    SkeletonBar(width: 160)
+                    SkeletonBar(width: 220)
+                }
+                .redacted(reason: .placeholder)
+                .padding(.top, 32)
+                Spacer()
+            } else if let err = errorMessage, profile == nil {
+                ErrorStateView(pesan: err) { Task { await load() } }
+            } else {
+                ScrollView {
+                    LazyVStack(spacing: 0, pinnedViews: []) {
+                        header
+                        Divider().padding(.vertical, 4)
+                        if posts.isEmpty {
+                            EmptyStateView(
+                                icon: "text.bubble",
+                                judul: "Belum ada post",
+                                pesan: "Penulis ini belum membagikan utas."
+                            )
+                        } else {
+                            ForEach(posts) { post in
+                                PostCardView(
+                                    post: post,
+                                    onDeleted: {
+                                        posts.removeAll { $0.id == post.id }
+                                    },
+                                    likeAction: { p, like in
+                                        try await FirestoreUtasService.shared.setLike(post: p, like: like)
+                                    }
+                                )
+                                Divider().padding(.leading, 72)
+                            }
+                        }
+                    }
+                }
+                .refreshable { await load() }
+            }
+        }
+        .navigationTitle(fallbackName)
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .cancellationAction) {
+                Button("Tutup") { dismiss() }
+            }
+        }
+        .task { await load() }
+        .sheet(isPresented: $showChat) {
+            if let roomId = chatRoomId {
+                NavigationStack {
+                    ChatRoomView(
+                        roomId: roomId,
+                        partnerName: profile?.displayName ?? fallbackName,
+                        myUserId: AuthManager.shared.uid ?? ""
+                    )
+                }
+            }
+        }
+    }
+
+    @ViewBuilder
+    private var header: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            HStack(spacing: 14) {
+                Group {
+                    if let url = profile?.avatarUrl, !url.isEmpty {
+                        AsyncImage(url: URL(string: url)) { phase in
+                            switch phase {
+                            case .success(let img): img.resizable().scaledToFill()
+                            default: InitialAvatarView(nama: profile?.displayName ?? fallbackName, diameter: 64)
+                            }
+                        }
+                    } else {
+                        InitialAvatarView(nama: profile?.displayName ?? fallbackName, diameter: 64)
+                    }
+                }
+                .frame(width: 64, height: 64)
+                .clipShape(Circle())
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(profile?.displayName ?? fallbackName)
+                        .font(.title3).bold()
+                        .lineLimit(1)
+                    if let bio = profile?.bio, !bio.isEmpty {
+                        Text(bio)
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+                            .lineLimit(3)
+                    }
+                }
+            }
+            HStack(spacing: 10) {
+                Button(following ? "Mengikuti" : "Ikuti") {
+                    Task { await toggleFollow() }
+                }
+                .buttonStyle(.borderedProminent)
+                .tint(following ? Color(uiColor: .systemGray5) : Brand.indigo)
+                .foregroundStyle(following ? Color.primary : Color.white)
+                .disabled(isTogglingFollow)
+                .accessibilityIdentifier("uit-profile-follow") // hook UI test
+                if let firstId = posts.first?.id {
+                    Button("Pesan") { Task { await openChat(utasId: firstId) } }
+                        .buttonStyle(.bordered)
+                        .tint(Brand.indigo)
+                        .disabled(isOpeningChat)
+                        .accessibilityIdentifier("uit-profile-message") // hook UI test
+                }
+            }
+            if let err = actionError {
+                Text(err).font(.caption).foregroundStyle(.red)
+            }
+        }
+        .padding(.horizontal, 20)
+        .padding(.vertical, 12)
+    }
+
+    func load() async {
+        if profile == nil { isLoading = true }
+        errorMessage = nil
+        do {
+            async let fetchedProfile = FirestoreUtasService.shared.fetchUserProfile(uid: authorUid)
+            async let fetchedPosts = FirestoreUtasService.shared.fetchPostsByAuthor(uid: authorUid)
+            profile = try await fetchedProfile
+            posts = try await fetchedPosts
+        } catch {
+            if profile == nil {
+                errorMessage = "Gagal memuat profil. Periksa koneksi lalu coba lagi."
+            }
+        }
+        isLoading = false
+    }
+
+    func toggleFollow() async {
+        guard !isTogglingFollow else { return }
+        isTogglingFollow = true
+        defer { isTogglingFollow = false }
+        let next = !following
+        do {
+            struct Body: Encodable { let targetUserId: String; let follow: Bool }
+            struct D: Decodable { let following: Bool? }
+            let res: APIResponse<D> = try await APIClient.shared.post(
+                "/utas/follow", body: Body(targetUserId: authorUid, follow: next)
+            )
+            if let apiErr = res.error, res.success == false {
+                actionError = apiErr
+                return
+            }
+            let ok = res.data?.following ?? next
+            following = ok
+            FollowStore.setFollowing(authorUid, ok)
+            actionError = nil
+        } catch {
+            actionError = "Gagal mengikuti. Coba lagi."
+        }
+    }
+
+    func openChat(utasId: String) async {
+        guard !isOpeningChat else { return }
+        isOpeningChat = true
+        defer { isOpeningChat = false }
+        do {
+            struct Body: Encodable { let utasId: String }
+            struct D: Decodable { let roomId: String }
+            let res: APIResponse<D> = try await APIClient.shared.post(
+                "/chat/from-utas", body: Body(utasId: utasId)
+            )
             if let apiErr = res.error, res.success == false {
                 actionError = apiErr
                 return

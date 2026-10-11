@@ -1,0 +1,4 @@
+module AppAuth {
+umbrella "/Users/shei/Library/Developer/Xcode/DerivedData/ChatAja-fedrmqkenxbpylhjjikyefkhfwua/SourcePackages/checkouts/AppAuth-iOS/Sources/AppAuth"
+export *
+}

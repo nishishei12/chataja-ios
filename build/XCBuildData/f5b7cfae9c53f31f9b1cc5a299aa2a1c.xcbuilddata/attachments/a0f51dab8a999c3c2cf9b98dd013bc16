@@ -1,0 +1,4 @@
+module third_party_IsAppEncrypted {
+umbrella "/Users/shei/Library/Developer/Xcode/DerivedData/ChatAja-fedrmqkenxbpylhjjikyefkhfwua/SourcePackages/checkouts/GoogleUtilities/third_party/IsAppEncrypted/Public"
+export *
+}

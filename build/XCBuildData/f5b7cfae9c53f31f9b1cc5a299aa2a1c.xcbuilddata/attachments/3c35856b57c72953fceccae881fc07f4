@@ -1,0 +1,4 @@
+module opensslWrapper {
+umbrella "/Users/shei/Library/Developer/Xcode/DerivedData/ChatAja-fedrmqkenxbpylhjjikyefkhfwua/SourcePackages/checkouts/grpc-binary/openssl-grpc-Wrapper/include"
+export *
+}

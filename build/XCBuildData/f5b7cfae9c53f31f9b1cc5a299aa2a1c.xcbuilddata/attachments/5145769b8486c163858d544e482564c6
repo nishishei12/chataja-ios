@@ -1,0 +1,169 @@
+{
+  "" : {
+    "diagnostics" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/ChatAja-primary.dia",
+    "emit-module-dependencies" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/ChatAja-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/ChatAja-primary-emit-module.dia",
+    "pch" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/ChatAja-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/ChatAja-primary.swiftdeps"
+  },
+  "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/ChatAja/App/ChatAjaApp.swift" : {
+    "const-values" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/ChatAjaApp.swiftconstvalues",
+    "dependencies" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/ChatAjaApp.d",
+    "diagnostics" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/ChatAjaApp.dia",
+    "index-unit-output-path" : "/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/ChatAjaApp.o",
+    "llvm-bc" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/ChatAjaApp.bc",
+    "object" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/ChatAjaApp.o",
+    "swift-dependencies" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/ChatAjaApp.swiftdeps",
+    "swiftmodule" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/ChatAjaApp~partial.swiftmodule"
+  },
+  "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/ChatAja/Core/API/APIClient.swift" : {
+    "const-values" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/APIClient.swiftconstvalues",
+    "dependencies" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/APIClient.d",
+    "diagnostics" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/APIClient.dia",
+    "index-unit-output-path" : "/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/APIClient.o",
+    "llvm-bc" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/APIClient.bc",
+    "object" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/APIClient.o",
+    "swift-dependencies" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/APIClient.swiftdeps",
+    "swiftmodule" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/APIClient~partial.swiftmodule"
+  },
+  "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/ChatAja/Core/API/AuthManager.swift" : {
+    "const-values" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/AuthManager.swiftconstvalues",
+    "dependencies" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/AuthManager.d",
+    "diagnostics" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/AuthManager.dia",
+    "index-unit-output-path" : "/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/AuthManager.o",
+    "llvm-bc" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/AuthManager.bc",
+    "object" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/AuthManager.o",
+    "swift-dependencies" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/AuthManager.swiftdeps",
+    "swiftmodule" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/AuthManager~partial.swiftmodule"
+  },
+  "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/ChatAja/Core/API/FirestoreChatService.swift" : {
+    "const-values" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/FirestoreChatService.swiftconstvalues",
+    "dependencies" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/FirestoreChatService.d",
+    "diagnostics" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/FirestoreChatService.dia",
+    "index-unit-output-path" : "/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/FirestoreChatService.o",
+    "llvm-bc" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/FirestoreChatService.bc",
+    "object" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/FirestoreChatService.o",
+    "swift-dependencies" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/FirestoreChatService.swiftdeps",
+    "swiftmodule" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/FirestoreChatService~partial.swiftmodule"
+  },
+  "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/ChatAja/Core/API/R2UploadService.swift" : {
+    "const-values" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/R2UploadService.swiftconstvalues",
+    "dependencies" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/R2UploadService.d",
+    "diagnostics" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/R2UploadService.dia",
+    "index-unit-output-path" : "/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/R2UploadService.o",
+    "llvm-bc" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/R2UploadService.bc",
+    "object" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/R2UploadService.o",
+    "swift-dependencies" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/R2UploadService.swiftdeps",
+    "swiftmodule" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/R2UploadService~partial.swiftmodule"
+  },
+  "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/ChatAja/Core/Models/Models.swift" : {
+    "const-values" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/Models.swiftconstvalues",
+    "dependencies" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/Models.d",
+    "diagnostics" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/Models.dia",
+    "index-unit-output-path" : "/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/Models.o",
+    "llvm-bc" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/Models.bc",
+    "object" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/Models.o",
+    "swift-dependencies" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/Models.swiftdeps",
+    "swiftmodule" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/Models~partial.swiftmodule"
+  },
+  "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/ChatAja/Features/Components/SharedUI.swift" : {
+    "const-values" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/SharedUI.swiftconstvalues",
+    "dependencies" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/SharedUI.d",
+    "diagnostics" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/SharedUI.dia",
+    "index-unit-output-path" : "/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/SharedUI.o",
+    "llvm-bc" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/SharedUI.bc",
+    "object" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/SharedUI.o",
+    "swift-dependencies" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/SharedUI.swiftdeps",
+    "swiftmodule" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/SharedUI~partial.swiftmodule"
+  },
+  "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/ChatAja/Features/Feed/FeedView.swift" : {
+    "const-values" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/FeedView.swiftconstvalues",
+    "dependencies" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/FeedView.d",
+    "diagnostics" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/FeedView.dia",
+    "index-unit-output-path" : "/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/FeedView.o",
+    "llvm-bc" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/FeedView.bc",
+    "object" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/FeedView.o",
+    "swift-dependencies" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/FeedView.swiftdeps",
+    "swiftmodule" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/FeedView~partial.swiftmodule"
+  },
+  "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/ChatAja/Features/Feed/FirestoreUtasService.swift" : {
+    "const-values" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/FirestoreUtasService.swiftconstvalues",
+    "dependencies" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/FirestoreUtasService.d",
+    "diagnostics" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/FirestoreUtasService.dia",
+    "index-unit-output-path" : "/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/FirestoreUtasService.o",
+    "llvm-bc" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/FirestoreUtasService.bc",
+    "object" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/FirestoreUtasService.o",
+    "swift-dependencies" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/FirestoreUtasService.swiftdeps",
+    "swiftmodule" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/FirestoreUtasService~partial.swiftmodule"
+  },
+  "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/ChatAja/Features/LoginView.swift" : {
+    "const-values" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/LoginView.swiftconstvalues",
+    "dependencies" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/LoginView.d",
+    "diagnostics" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/LoginView.dia",
+    "index-unit-output-path" : "/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/LoginView.o",
+    "llvm-bc" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/LoginView.bc",
+    "object" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/LoginView.o",
+    "swift-dependencies" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/LoginView.swiftdeps",
+    "swiftmodule" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/LoginView~partial.swiftmodule"
+  },
+  "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/ChatAja/Features/MainTabView.swift" : {
+    "const-values" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/MainTabView.swiftconstvalues",
+    "dependencies" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/MainTabView.d",
+    "diagnostics" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/MainTabView.dia",
+    "index-unit-output-path" : "/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/MainTabView.o",
+    "llvm-bc" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/MainTabView.bc",
+    "object" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/MainTabView.o",
+    "swift-dependencies" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/MainTabView.swiftdeps",
+    "swiftmodule" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/MainTabView~partial.swiftmodule"
+  },
+  "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/ChatAja/Features/Settings/SettingsView.swift" : {
+    "const-values" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/SettingsView.swiftconstvalues",
+    "dependencies" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/SettingsView.d",
+    "diagnostics" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/SettingsView.dia",
+    "index-unit-output-path" : "/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/SettingsView.o",
+    "llvm-bc" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/SettingsView.bc",
+    "object" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/SettingsView.o",
+    "swift-dependencies" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/SettingsView.swiftdeps",
+    "swiftmodule" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/SettingsView~partial.swiftmodule"
+  },
+  "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/ChatAja/Features/Thread/ChatMedia.swift" : {
+    "const-values" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/ChatMedia.swiftconstvalues",
+    "dependencies" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/ChatMedia.d",
+    "diagnostics" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/ChatMedia.dia",
+    "index-unit-output-path" : "/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/ChatMedia.o",
+    "llvm-bc" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/ChatMedia.bc",
+    "object" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/ChatMedia.o",
+    "swift-dependencies" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/ChatMedia.swiftdeps",
+    "swiftmodule" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/ChatMedia~partial.swiftmodule"
+  },
+  "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/ChatAja/Features/Thread/ChatRoomView.swift" : {
+    "const-values" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/ChatRoomView.swiftconstvalues",
+    "dependencies" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/ChatRoomView.d",
+    "diagnostics" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/ChatRoomView.dia",
+    "index-unit-output-path" : "/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/ChatRoomView.o",
+    "llvm-bc" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/ChatRoomView.bc",
+    "object" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/ChatRoomView.o",
+    "swift-dependencies" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/ChatRoomView.swiftdeps",
+    "swiftmodule" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/ChatRoomView~partial.swiftmodule"
+  },
+  "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/ChatAja/Features/Thread/ThreadView.swift" : {
+    "const-values" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/ThreadView.swiftconstvalues",
+    "dependencies" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/ThreadView.d",
+    "diagnostics" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/ThreadView.dia",
+    "index-unit-output-path" : "/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/ThreadView.o",
+    "llvm-bc" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/ThreadView.bc",
+    "object" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/ThreadView.o",
+    "swift-dependencies" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/ThreadView.swiftdeps",
+    "swiftmodule" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/ThreadView~partial.swiftmodule"
+  },
+  "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "const-values" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftconstvalues",
+    "dependencies" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/GeneratedAssetSymbols.d",
+    "diagnostics" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/GeneratedAssetSymbols.dia",
+    "index-unit-output-path" : "/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "llvm-bc" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/GeneratedAssetSymbols.bc",
+    "object" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "swift-dependencies" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftdeps",
+    "swiftmodule" : "/Users/shei/Library/Mobile Documents/com~apple~CloudDocs/KERJA/chataja IOS/Untitled/chataja-ios/build/ChatAja.build/Debug-iphoneos/ChatAja.build/Objects-normal/arm64/GeneratedAssetSymbols~partial.swiftmodule"
+  }
+}

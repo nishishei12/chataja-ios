@@ -138,6 +138,14 @@ struct LoginView: View {
   // MARK: - Actions
 
   private func handleGoogleSignIn() {
+    // Tanpa SDK GoogleSignIn, satu-satunya jalan adalah login web Firebase
+    // yang rusak di dalam aplikasi (sessionStorage terpartisi). Jangan buka
+    // browser yang pasti gagal — langsung kasih tahu yang kurang.
+    #if !canImport(GoogleSignIn)
+      auth.authError =
+        "Login Google butuh paket GoogleSignIn. Di Xcode: File → Add Package Dependencies → google/GoogleSignIn-iOS, lalu coba lagi."
+      return
+    #endif
     loginGeneration += 1
     let gen = loginGeneration
     isLoading = true

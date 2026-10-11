@@ -1,0 +1,4 @@
+module leveldb {
+umbrella "/Users/shei/Library/Developer/Xcode/DerivedData/ChatAja-fedrmqkenxbpylhjjikyefkhfwua/SourcePackages/checkouts/leveldb/include"
+export *
+}

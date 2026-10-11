@@ -1,0 +1,4 @@
+module nanopb {
+umbrella "/Users/shei/Library/Developer/Xcode/DerivedData/ChatAja-fedrmqkenxbpylhjjikyefkhfwua/SourcePackages/checkouts/nanopb/spm_headers"
+export *
+}

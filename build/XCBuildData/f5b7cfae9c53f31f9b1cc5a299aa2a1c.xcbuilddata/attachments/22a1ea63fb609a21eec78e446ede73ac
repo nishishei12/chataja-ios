@@ -1,0 +1,4 @@
+module grpcWrapper {
+umbrella "/Users/shei/Library/Developer/Xcode/DerivedData/ChatAja-fedrmqkenxbpylhjjikyefkhfwua/SourcePackages/checkouts/grpc-binary/grpc-Wrapper/include"
+export *
+}
